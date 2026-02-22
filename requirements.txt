@@ -1,0 +1,20 @@
+# UI Framework
+streamlit
+
+# LLM & Logic
+ollama
+
+# Vector Database & Embeddings
+chromadb
+sentence-transformers
+
+# Tools & Web Search
+duckduckgo-search
+
+# Document Processing (RAG Feature)
+pypdf
+python-docx
+
+# Environment & Infrastructure
+python-dotenv
+pydantic

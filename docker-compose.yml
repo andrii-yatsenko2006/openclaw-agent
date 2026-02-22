@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  ai-agent:
+    # Build image using Dockerfile in current directory
+    build: .
+    # Map container port 8501 to host port 8501
+    ports:
+      - "8501:8501"
+    # Load environment variables from .env
+    env_file:
+      - .env
+    # Persistent storage for DB and Logs
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - OLLAMA_HOST=${OLLAMA_HOST}
+    # Crucial: Connects container to Ollama running on your Windows host
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # Restart policy
+    restart: always
